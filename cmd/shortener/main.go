@@ -9,12 +9,12 @@ import (
 func main() {
 	router := gin.Default()
 	router.POST("/", func(c *gin.Context) {
-		longUrl, err := c.GetRawData()
+		longURL, err := c.GetRawData()
 		if err != nil {
 			c.String(http.StatusBadRequest, "Не передан Url")
 		}
 
-		result, err := url.Create(string(longUrl))
+		result, err := url.Create(string(longURL))
 		if err != nil {
 			c.String(http.StatusBadRequest, "Ошибка сохранения Url")
 		}

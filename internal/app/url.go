@@ -7,24 +7,24 @@ import (
 
 var urls = map[string]string{}
 
-func Create(longUrl string) (string, error) {
-	shortUrl, _ := find(longUrl)
-	if len([]rune(shortUrl)) > 0 {
-		return shortUrl, nil
+func Create(longURL string) (string, error) {
+	shortURL, _ := find(longURL)
+	if len([]rune(shortURL)) > 0 {
+		return shortURL, nil
 	}
 
-	shortUrl = randomString(4)
-	urls[shortUrl] = longUrl
-	return shortUrl, nil
+	shortURL = randomString(4)
+	urls[shortURL] = longURL
+	return shortURL, nil
 }
 
-func Read(shortUrl string) (string, error) {
-	longUrl, exists := urls[shortUrl]
+func Read(shortURL string) (string, error) {
+	longURL, exists := urls[shortURL]
 	if !exists {
 		return "", errors.New("url не найден")
 	}
 
-	return longUrl, nil
+	return longURL, nil
 }
 
 func randomString(n int) string {
@@ -36,9 +36,9 @@ func randomString(n int) string {
 	return string(str)
 }
 
-func find(longUrl string) (string, string) {
+func find(longURL string) (string, string) {
 	for key, value := range urls {
-		if value == longUrl {
+		if value == longURL {
 			return key, value
 		}
 	}
