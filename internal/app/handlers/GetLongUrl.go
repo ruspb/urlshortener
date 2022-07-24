@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func GetLongUrl(c *gin.Context) {
+func GetLongURL(c *gin.Context) {
 	result, err := storage.Retrieve(c.Param("id"))
 	if err != nil {
 		c.String(http.StatusBadRequest, "Ошибка чтения Url")

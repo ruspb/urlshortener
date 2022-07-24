@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func CreateShortUrl(c *gin.Context) {
+func CreateShortURL(c *gin.Context) {
 	longURL, err := c.GetRawData()
 	if err != nil {
 		c.String(http.StatusBadRequest, "Не передан Url")

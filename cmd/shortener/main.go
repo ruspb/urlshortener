@@ -6,8 +6,8 @@ import (
 
 func main() {
 	router := handlers.GetRouter()
-	router.POST("/", handlers.CreateShortUrl)
-	router.GET("/:id", handlers.GetLongUrl)
+	router.POST("/", handlers.CreateShortURL)
+	router.GET("/:id", handlers.GetLongURL)
 	router.NoRoute(handlers.NoRoute)
 
 	router.Run(":8080")
